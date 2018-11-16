@@ -1,0 +1,23 @@
+.main-body{
+  display: flex;
+  flex-direction: row;
+}
+.new-source{
+  overflow-y:scroll;
+  height: 100vh;
+  width: 20%;
+}
+.new-source-list{
+  width: 80%;
+  overflow-y:scroll;
+  height: 100vh;
+}
+
+.source-name{
+  padding: 10px;
+}
+
+.heading-teritiary{
+  font-size: 22px;
+  font-weight: 700;
+}
