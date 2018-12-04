@@ -5,12 +5,18 @@ class DealDaySection extends Component{
         super(props);
         this.state = {
             products:[
-                {productimg:"/assets/img/product01.jpg", productname:"Product Name Goes Here", price:"120", discount:20, desc:""},
-                {productimg:"/assets/img/product02.jpg", productname:"Product Name Goes Here 3",price:"120", discount:20,desc:""},
-                {productimg:"/assets/img/product03.jpg", productname:"Product Name Goes Here 4",price:"120", discount:15,desc:""},
-                {productimg:"/assets/img/product04.jpg", productname:"Product Name Goes Here 5",price:"120", discount:25,desc:""},
-                {productimg:"/assets/img/product05.jpg", productname:"Product Name Goes Here 6",price:"120", discount:30,desc:""},
-                {productimg:"/assets/img/product06.jpg", productname:"Product Name Goes Here 6",price:"120", discount:30,desc:""},
+                {productimg:"/assets/img/product01.jpg", productname:"Product Name Goes Here", price:"120", discount:20, hotdeal:true},
+                {productimg:"/assets/img/product02.jpg", productname:"Product Name Goes Here 2",price:"120", discount:20,hotdeal:true},
+                {productimg:"/assets/img/product03.jpg", productname:"Product Name Goes Here 3",price:"120", discount:15,hotdeal:true},
+                {productimg:"/assets/img/product04.jpg", productname:"Product Name Goes Here 4",price:"120", discount:25,hotdeal:true},
+                {productimg:"/assets/img/product05.jpg", productname:"Product Name Goes Here 5",price:"120", discount:30,hotdeal:true},
+                {productimg:"/assets/img/product06.jpg", productname:"Product Name Goes Here 6",price:"120", discount:30,hotdeal:true},
+
+                {productimg:"/assets/img/product04.jpg", productname:"Not hot deasl Products", price:"120", discount:20, hotdeal:false},
+                {productimg:"/assets/img/product03.jpg", productname:"Product Name Goes Here 2",price:"32.50", discount:20,hotdeal:false},
+                {productimg:"/assets/img/product02.jpg", productname:"Product Name Goes Here 3",price:"120", discount:15,hotdeal:false},
+                {productimg:"/assets/img/product01.jpg", productname:"Product Name Goes Here 4",price:"120", discount:25,hotdeal:false},
+                {productimg:"/assets/img/product05.jpg", productname:"Product Name Goes Here 5",price:"120", discount:30,hotdeal:false}
             ]
 
         }
@@ -50,7 +56,7 @@ class DealDaySection extends Component{
                                 <div id="product-slick-1" className="product-slick">
                                     {
                                         this.state.products.map((product, i) =>{
-                                            return(
+                                            return( product.hotdeal &&
                                                 <SingleProduct product={product} />
                                             )
                                         })
@@ -107,104 +113,13 @@ class DealDaySection extends Component{
                         <div className="col-md-9 col-sm-6 col-xs-6">
                             <div className="row">
                                 <div id="product-slick-2" className="product-slick">
-                                    <div className="product product-single">
-                                        <div className="product-thumb">
-                                            <button className="main-btn quick-view"><i className="fa fa-search-plus"></i> Quick view</button>
-                                            <img src="/assets/img/product06.jpg" alt=""/>
-                                        </div>
-                                        <div className="product-body">
-                                            <h3 className="product-price">$32.50</h3>
-                                            <div className="product-rating">
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star-o empty"></i>
-                                            </div>
-                                            <h2 className="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            <div className="product-btns">
-                                                <button className="main-btn icon-btn"><i className="fa fa-heart"></i></button>
-                                                <button className="main-btn icon-btn"><i className="fa fa-exchange"></i></button>
-                                                <button className="primary-btn add-to-cart"><i className="fa fa-shopping-cart"></i> Add to Cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="product product-single">
-                                        <div className="product-thumb">
-                                            <div className="product-label">
-                                                <span className="sale">-20%</span>
-                                            </div>
-                                            <button className="main-btn quick-view"><i className="fa fa-search-plus"></i> Quick view</button>
-                                            <img src="/assets/img/product05.jpg" alt=""/>
-                                        </div>
-                                        <div className="product-body">
-                                            <h3 className="product-price">$32.50 <del className="product-old-price">$45.00</del></h3>
-                                            <div className="product-rating">
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star-o empty"></i>
-                                            </div>
-                                            <h2 className="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            <div className="product-btns">
-                                                <button className="main-btn icon-btn"><i className="fa fa-heart"></i></button>
-                                                <button className="main-btn icon-btn"><i className="fa fa-exchange"></i></button>
-                                                <button className="primary-btn add-to-cart"><i className="fa fa-shopping-cart"></i> Add to Cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="product product-single">
-                                        <div className="product-thumb">
-                                            <button className="main-btn quick-view"><i className="fa fa-search-plus"></i> Quick view</button>
-                                            <img src="/assets/img/product04.jpg" alt=""/>
-                                        </div>
-                                        <div className="product-body">
-                                            <h3 className="product-price">$32.50</h3>
-                                            <div className="product-rating">
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star-o empty"></i>
-                                            </div>
-                                            <h2 className="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            <div className="product-btns">
-                                                <button className="main-btn icon-btn"><i className="fa fa-heart"></i></button>
-                                                <button className="main-btn icon-btn"><i className="fa fa-exchange"></i></button>
-                                                <button className="primary-btn add-to-cart"><i className="fa fa-shopping-cart"></i> Add to Cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="product product-single">
-                                        <div className="product-thumb">
-                                            <div className="product-label">
-                                                <span>New</span>
-                                                <span className="sale">-20%</span>
-                                            </div>
-                                            <button className="main-btn quick-view"><i className="fa fa-search-plus"></i> Quick view</button>
-                                            <img src="/assets/img/product03.jpg" alt=""/>
-                                        </div>
-                                        <div className="product-body">
-                                            <h3 className="product-price">$32.50 <del className="product-old-price">$45.00</del></h3>
-                                            <div className="product-rating">
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star-o empty"></i>
-                                            </div>
-                                            <h2 className="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                            <div className="product-btns">
-                                                <button className="main-btn icon-btn"><i className="fa fa-heart"></i></button>
-                                                <button className="main-btn icon-btn"><i className="fa fa-exchange"></i></button>
-                                                <button className="primary-btn add-to-cart"><i className="fa fa-shopping-cart"></i> Add to Cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {
+                                        this.state.products.map((product, i) =>{
+                                            return( !product.hotdeal &&
+                                                <SingleProduct product={product} />
+                                            )
+                                        })
+                                    }
 
                                 </div>
                             </div>
