@@ -2,18 +2,18 @@ import React, {Component} from 'react';
 
 class SingleProduct extends Component{
     render(){
-        let {productimg, productname, price, discount} = this.props.product;
+        let {productimg, productname, price, discount,hotdeal} = this.props.product;
         return(
             <div className="product product-single">
                 <div className="product-thumb">
                     <div className="product-label">
                         <span className="sale">-{discount}%</span>
                     </div>
-                    <ul className="product-countdown">
+                    {hotdeal && <ul className="product-countdown">
                         <li><span>00 H</span></li>
                         <li><span>00 M</span></li>
                         <li><span>00 S</span></li>
-                    </ul>
+                    </ul>}
                     <button className="main-btn quick-view"><i className="fa fa-search-plus"></i> Quick view</button>
                     <img src={productimg} alt=""/>
                 </div>
